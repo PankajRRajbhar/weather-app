@@ -3,12 +3,12 @@ const express=require("express")
 const app= express()
 const hbs=require("hbs")
 const forecast=require("./utils/forecast")
-const geocode=require("./utils/geocode")
 const request=require("request")
 
 
-const { title, send } = require("process")
+
 const geoCode = require("./utils/geocode")
+const port = process.env.PORT || 3000
 
 //extracting the path
 const pathToPublicFolder=path.join(__dirname,"../public")
@@ -94,6 +94,6 @@ app.get('*',(req,res)=>{
     })
 })
 
-app.listen(3000,()=>{
+app.listen(port,()=>{
     console.log("server is up and running!!!")
 })
